@@ -3,20 +3,6 @@ import pandas as pd
 import numpy as np
 import xgboost as xgb
 import joblib
-import csv
-
-# Load the heart dataset
-@st.cache_data
-def load_data():
-    heart_data = pd.read_csv(r"C:\Users\PRERNA\OneDrive\Desktop\Minor\HeartDisease.csv", encoding='utf-8')
-    #return heart_data
-# Function to train and save the model
-def train_and_save_model(data):
-    X = data.drop(columns='target', axis=1)
-    Y = data['target']
-    xgb_model = xgb.XGBClassifier(objective="binary:logistic", random_state=42)
-    xgb_model.fit(X, Y)
-    joblib.dump(xgb_model, r'C:\Users\PRERNA\OneDrive\Desktop\Minor\heartdisease.h5')
 
 # Load the saved model
 @st.cache_data
