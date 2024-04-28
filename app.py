@@ -3,10 +3,9 @@ import pandas as pd
 import numpy as np
 import xgboost as xgb
 import joblib
-
+import os
 # Load the saved model
 @st.cache_data
-import os
 def load_model():
     current_directory = os.getcwd()
     model_file_path = os.path.join(current_directory, 'heartdisease.h5')
