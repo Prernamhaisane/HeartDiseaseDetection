@@ -9,10 +9,7 @@ import csv
 @st.cache_data
 def load_data():
     heart_data = pd.read_csv(r"C:\Users\PRERNA\OneDrive\Desktop\Minor\HeartDisease.csv", encoding='utf-8')
-    return heart_data
-
-
-
+    #return heart_data
 # Function to train and save the model
 def train_and_save_model(data):
     X = data.drop(columns='target', axis=1)
