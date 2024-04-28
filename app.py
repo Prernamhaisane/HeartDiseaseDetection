@@ -9,6 +9,9 @@ import joblib
 def load_data():
     heart_data = pd.read_csv(r"C:\Users\PRERNA\OneDrive\Desktop\Minor\HeartDisease.csv")
     return heart_data
+import csv
+with open('HeartDisease.csv','r') as file:
+    heart_data = csv.reader(file)
 
 # Function to train and save the model
 def train_and_save_model(data):
