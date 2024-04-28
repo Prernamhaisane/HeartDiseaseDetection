@@ -12,13 +12,6 @@ def load_model():
 
 def main():
     st.title('Heart Disease Prediction')
-
-    # Load data
-    heart_data = load_data()
-
-    # Train and save the model
-    train_and_save_model(heart_data)
-
     # Load the model
     model = load_model()
 
