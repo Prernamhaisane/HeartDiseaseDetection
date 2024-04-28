@@ -6,9 +6,13 @@ import joblib
 
 # Load the saved model
 @st.cache_data
+import os
 def load_model():
-    xgb_model = joblib.load(r'C:\Users\PRERNA\OneDrive\Desktop\Minor\heartdisease.h5')
+    current_directory = os.getcwd()
+    model_file_path = os.path.join(current_directory, 'heartdisease.h5')
+    xgb_model = joblib.load(model_file_path)
     return xgb_model
+
 
 def main():
     st.title('Heart Disease Prediction')
