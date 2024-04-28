@@ -19,7 +19,7 @@ def train_and_save_model(data):
     joblib.dump(xgb_model, r'C:\Users\PRERNA\OneDrive\Desktop\Minor\heartdisease.h5')
 
 # Load the saved model
-@st.cache_resource
+@st.cache_data
 def load_model():
     xgb_model = joblib.load(r'C:\Users\PRERNA\OneDrive\Desktop\Minor\heartdisease.h5')
     return xgb_model
@@ -31,7 +31,7 @@ def main():
     heart_data = load_data()
 
     # Train and save the model
-    model = train_and_save_model(heart_data)
+    train_and_save_model(heart_data)
 
     # Load the model
     model = load_model()
@@ -90,7 +90,5 @@ def main():
         else:
             st.write('The person is suffering from heart disease.')
 
-    return model
-
 if __name__ == '__main__':
-    model = main()
+    main()
