@@ -68,9 +68,9 @@ def main():
         input_data = input_data.reshape(1, -1)
         prediction = model.predict(input_data)
         if prediction[0] == 0:
-            st.write('The person does not have heart disease.')
+            st.write('Prediction : The person does not have heart disease.')
         else:
-            st.write('The person is suffering from heart disease.')
+            st.write('Prediction : The person is suffering from heart disease.')
 
 if __name__ == '__main__':
     main()
